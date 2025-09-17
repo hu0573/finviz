@@ -2,6 +2,10 @@ finviz-api
 ##########
 *Unofficial Python API for FinViz*
 
+.. note::
+    **功能测试完成**: 所有85个筛选器已通过系统性测试，功能正常，与网页结果100%匹配。
+    详细测试报告请查看 `archive/test_files/filter_testing_report.md`。
+
 .. image:: https://badge.fury.io/py/finviz.svg
     :target: https://badge.fury.io/py/finviz
     

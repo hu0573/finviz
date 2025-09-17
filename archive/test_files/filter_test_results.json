@@ -1,0 +1,2107 @@
+{
+  "summary": {
+    "total_filters": 85,
+    "successful_filters": 84,
+    "filters_with_empty_results": 0,
+    "filters_with_errors": 0,
+    "total_options_tested": 166,
+    "total_empty_results": 0
+  },
+  "results": [
+    {
+      "filter_name": "Exchange",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "AMEX",
+          "option_value": "exch_amex",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "CBOE",
+          "option_value": "exch_cboe",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Index",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "S&P 500",
+          "option_value": "idx_sp500",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "NASDAQ 100",
+          "option_value": "idx_ndx",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Sector",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Basic Materials",
+          "option_value": "sec_basicmaterials",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Communication Services",
+          "option_value": "sec_communicationservices",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Industry",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Stocks only (ex-Funds)",
+          "option_value": "ind_stocksonly",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Exchange Traded Fund",
+          "option_value": "ind_exchangetradedfund",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Country",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "USA",
+          "option_value": "geo_usa",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Foreign (ex-USA)",
+          "option_value": "geo_notusa",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Market Cap.",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Mega ($200bln and more)",
+          "option_value": "cap_mega",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Large ($10bln to $200bln)",
+          "option_value": "cap_large",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "P/E",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Low (<15)",
+          "option_value": "fa_pe_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Profitable (>0)",
+          "option_value": "fa_pe_profitable",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Forward P/E",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Low (<15)",
+          "option_value": "fa_fpe_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Profitable (>0)",
+          "option_value": "fa_fpe_profitable",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "PEG",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Low (<1)",
+          "option_value": "fa_peg_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "High (>2)",
+          "option_value": "fa_peg_high",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "P/S",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Low (<1)",
+          "option_value": "fa_ps_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "High (>10)",
+          "option_value": "fa_ps_high",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "P/B",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Low (<1)",
+          "option_value": "fa_pb_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "High (>5)",
+          "option_value": "fa_pb_high",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Price/Cash",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Low (<3)",
+          "option_value": "fa_pc_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "High (>50)",
+          "option_value": "fa_pc_high",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Price/Free Cash Flow",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Low (<15)",
+          "option_value": "fa_pfcf_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "High (>50)",
+          "option_value": "fa_pfcf_high",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "EV/EBITDA",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Negative (<0)",
+          "option_value": "fa_evebitda_negative",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Low (<15)",
+          "option_value": "fa_evebitda_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "EV/Sales",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Negative (<0)",
+          "option_value": "fa_evsales_negative",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Low (<1)",
+          "option_value": "fa_evsales_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Dividend Growth",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "1 Year Positive",
+          "option_value": "fa_divgrowth_1ypos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "1 Year Over 5%",
+          "option_value": "fa_divgrowth_1yo5",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "EPS GrowthThis Year",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_epsyoy_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_epsyoy_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "EPS GrowthNext Year",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_epsyoy1_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_epsyoy1_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "EPS GrowthQtr Over Qtr",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_epsqoq_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_epsqoq_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "EPS Growth TTM",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_epsyoyttm_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_epsyoyttm_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "EPS GrowthPast 3 Years",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_eps3years_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_eps3years_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "EPS GrowthPast 5 Years",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_eps5years_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_eps5years_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "EPS GrowthNext 5 Years",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_estltgrowth_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_estltgrowth_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Sales GrowthQtr Over Qtr",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_salesqoq_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_salesqoq_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Sales Growth TTM",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_salesyoyttm_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_salesyoyttm_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Sales GrowthPast 3 Years",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_sales3years_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_sales3years_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Sales GrowthPast 5 Years",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_sales5years_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_sales5years_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Earnings & Revenue Surprise",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Both positive (>0%)",
+          "option_value": "fa_epsrev_bp",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Both met (0%)",
+          "option_value": "fa_epsrev_bm",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Dividend Yield",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "None (0%)",
+          "option_value": "fa_div_none",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_div_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Return on Assets",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_roa_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_roa_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Return on Equity",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_roe_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_roe_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Return on Invested Capital",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_roi_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_roi_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Current Ratio",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "High (>3)",
+          "option_value": "fa_curratio_high",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Low (<1)",
+          "option_value": "fa_curratio_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Quick Ratio",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "High (>3)",
+          "option_value": "fa_quickratio_high",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Low (<0.5)",
+          "option_value": "fa_quickratio_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "LT Debt/Equity",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "High (>0.5)",
+          "option_value": "fa_ltdebteq_high",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Low (<0.1)",
+          "option_value": "fa_ltdebteq_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Debt/Equity",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "High (>0.5)",
+          "option_value": "fa_debteq_high",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Low (<0.1)",
+          "option_value": "fa_debteq_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Gross Margin",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_grossmargin_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_grossmargin_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Operating Margin",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_opermargin_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_opermargin_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Net Profit Margin",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_netmargin_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "fa_netmargin_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Payout Ratio",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "None (0%)",
+          "option_value": "fa_payoutratio_none",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Positive (>0%)",
+          "option_value": "fa_payoutratio_pos",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "InsiderOwnership",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Low (<5%)",
+          "option_value": "sh_insiderown_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "High (>30%)",
+          "option_value": "sh_insiderown_high",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "InsiderTransactions",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Very Negative (<20%)",
+          "option_value": "sh_insidertrans_veryneg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "sh_insidertrans_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "InstitutionalOwnership",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Low (<5%)",
+          "option_value": "sh_instown_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "High (>90%)",
+          "option_value": "sh_instown_high",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "InstitutionalTransactions",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Very Negative (<20%)",
+          "option_value": "sh_insttrans_veryneg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Negative (<0%)",
+          "option_value": "sh_insttrans_neg",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Short Float",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Low (<5%)",
+          "option_value": "sh_short_low",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "High (>20%)",
+          "option_value": "sh_short_high",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Analyst Recom.",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Strong Buy (1)",
+          "option_value": "an_recom_strongbuy",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Buy or better",
+          "option_value": "an_recom_buybetter",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Option/Short",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Optionable",
+          "option_value": "sh_opt_option",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Shortable",
+          "option_value": "sh_opt_short",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Earnings Date",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Today",
+          "option_value": "earningsdate_today",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Today Before Market Open",
+          "option_value": "earningsdate_todaybefore",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Performance",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Intraday (Elite only)",
+          "option_value": "ta_perf_modal_intraday",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Today Up",
+          "option_value": "ta_perf_dup",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Performance 2",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Intraday (Elite only)",
+          "option_value": "ta_perf2_modal_intraday",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Today Up",
+          "option_value": "ta_perf2_dup",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Volatility",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Week - Over 2%",
+          "option_value": "ta_volatility_wo2",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Week - Over 3%",
+          "option_value": "ta_volatility_wo3",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "RSI (14)",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Overbought (90)",
+          "option_value": "ta_rsi_ob90",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Overbought (80)",
+          "option_value": "ta_rsi_ob80",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Gap",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Up",
+          "option_value": "ta_gap_u",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Up 0%",
+          "option_value": "ta_gap_u0",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "20-Day Simple Moving Average",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Price below SMA20",
+          "option_value": "ta_sma20_pb",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Price 10% below SMA20",
+          "option_value": "ta_sma20_pb10",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "50-Day Simple Moving Average",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Price below SMA50",
+          "option_value": "ta_sma50_pb",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Price 10% below SMA50",
+          "option_value": "ta_sma50_pb10",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "200-Day Simple Moving Average",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Price below SMA200",
+          "option_value": "ta_sma200_pb",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Price 10% below SMA200",
+          "option_value": "ta_sma200_pb10",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Change",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Up",
+          "option_value": "ta_change_u",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Up 1%",
+          "option_value": "ta_change_u1",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Change from Open",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Up",
+          "option_value": "ta_changeopen_u",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Up 1%",
+          "option_value": "ta_changeopen_u1",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "20-Day High/Low",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "New High",
+          "option_value": "ta_highlow20d_nh",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "New Low",
+          "option_value": "ta_highlow20d_nl",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "50-Day High/Low",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "New High",
+          "option_value": "ta_highlow50d_nh",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "New Low",
+          "option_value": "ta_highlow50d_nl",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "52-Week High/Low",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "New High",
+          "option_value": "ta_highlow52w_nh",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "New Low",
+          "option_value": "ta_highlow52w_nl",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "All-Time High/Low",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "New High",
+          "option_value": "ta_alltime_nh",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "New Low",
+          "option_value": "ta_alltime_nl",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Pattern",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Horizontal S/R",
+          "option_value": "ta_pattern_horizontal",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Horizontal S/R (Strong)",
+          "option_value": "ta_pattern_horizontal2",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Candlestick",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Long Lower Shadow",
+          "option_value": "ta_candlestick_lls",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Long Upper Shadow",
+          "option_value": "ta_candlestick_lus",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Beta",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Under 0",
+          "option_value": "ta_beta_u0",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Under 0.5",
+          "option_value": "ta_beta_u0.5",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Average True Range",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Over 0.25",
+          "option_value": "ta_averagetruerange_o0.25",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Over 0.5",
+          "option_value": "ta_averagetruerange_o0.5",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Average Volume",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Under 50K",
+          "option_value": "sh_avgvol_u50",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Under 100K",
+          "option_value": "sh_avgvol_u100",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Relative Volume",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Over 10",
+          "option_value": "sh_relvol_o10",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Over 5",
+          "option_value": "sh_relvol_o5",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Current Volume",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Under 50K",
+          "option_value": "sh_curvol_u50",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Under 100K",
+          "option_value": "sh_curvol_u100",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Trades",
+      "status": "skipped",
+      "message": "没有有效选项",
+      "options_tested": 0,
+      "successful_options": 0,
+      "empty_results": 0,
+      "errors": 0
+    },
+    {
+      "filter_name": "Price $",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Under $1",
+          "option_value": "sh_price_u1",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Under $2",
+          "option_value": "sh_price_u2",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Target Price",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "50% Above Price",
+          "option_value": "targetprice_a50",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "40% Above Price",
+          "option_value": "targetprice_a40",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "IPO Date",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Today",
+          "option_value": "ipodate_today",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Yesterday",
+          "option_value": "ipodate_yesterday",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Shares Outstanding",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Under 1M",
+          "option_value": "sh_outstanding_u1",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Under 5M",
+          "option_value": "sh_outstanding_u5",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Float",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Under 1M",
+          "option_value": "sh_float_u1",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Under 5M",
+          "option_value": "sh_float_u5",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "After-Hours Close",
+      "status": "all_successful",
+      "message": "所有 1 个选项测试成功",
+      "options_tested": 1,
+      "successful_options": 1,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Custom (Elite only)",
+          "option_value": "ah_close_frange",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "After-Hours Change",
+      "status": "all_successful",
+      "message": "所有 1 个选项测试成功",
+      "options_tested": 1,
+      "successful_options": 1,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Custom (Elite only)",
+          "option_value": "ah_change_frange",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Latest News",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Today",
+          "option_value": "news_date_today",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Aftermarket Today",
+          "option_value": "news_date_todayafter",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Single Category",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Bonds - Broad Market",
+          "option_value": "etf_category_bondsbroadmarket",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Bonds - Convertible",
+          "option_value": "etf_category_bondsconvertible",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Asset Type",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Bonds",
+          "option_value": "etf_assettype_bonds",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Carbon Trading",
+          "option_value": "etf_assettype_carbontrading",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Sponsor",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Aberdeen",
+          "option_value": "etf_sponsor_aberdeen",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Absolute Investment Advisers",
+          "option_value": "etf_sponsor_absoluteinvestmentadvisers",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Net Expense Ratio",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "Under 0.1%",
+          "option_value": "etf_netexpense_u01",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "Under 0.2%",
+          "option_value": "etf_netexpense_u02",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Net Fund Flows",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "1 Month - Over 0%",
+          "option_value": "etf_fundflows_1mo0",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "1 Month - Over 10%",
+          "option_value": "etf_fundflows_1mo10",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Annualized Return",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "1 Year - Over 0%",
+          "option_value": "etf_return_1yo0",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "1 Year - Over 5%",
+          "option_value": "etf_return_1yo05",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filter_name": "Tags",
+      "status": "all_successful",
+      "message": "所有 2 个选项测试成功",
+      "options_tested": 2,
+      "successful_options": 2,
+      "empty_results": 0,
+      "errors": 0,
+      "option_results": [
+        {
+          "option_name": "13F",
+          "option_value": "etf_tags_13f",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        },
+        {
+          "option_name": "3d-printing",
+          "option_value": "etf_tags_3dprinting",
+          "success": true,
+          "message": "成功，找到 5 只股票",
+          "count": 5
+        }
+      ]
+    }
+  ]
+}

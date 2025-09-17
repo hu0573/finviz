@@ -22,13 +22,20 @@ from .helper_functions.request_functions import (Connector,
                                                        sequential_data_scrape)
 
 TABLE_TYPES = {
-    "Overview": "111",
-    "Valuation": "121",
-    "Ownership": "131",
-    "Performance": "141",
-    "Custom": "152",
-    "Financial": "161",
-    "Technical": "171",
+    # 主要表格类型（基于实际筛选器分布）
+    "Descriptive": "111",    # 描述性筛选器：交易所、板块、市值等
+    "Fundamental": "161",    # 基本面筛选器：财务指标、估值指标
+    "Technical": "171",      # 技术分析筛选器：RSI、SMA、技术指标
+    "News": "181",          # 新闻筛选器：新闻相关
+    "ETF": "181",           # ETF筛选器：ETF和基金相关
+    
+    # 兼容性映射（保持向后兼容）
+    "Overview": "111",      # 等同于Descriptive
+    "Financial": "161",     # 等同于Fundamental
+    "Valuation": "121",     # 估值筛选器（Fundamental的子集）
+    "Ownership": "131",     # 持股信息（Descriptive的子集）
+    "Performance": "141",   # 表现数据（Technical的子集）
+    "Custom": "152",        # 自定义列
 }
 
 
@@ -211,6 +218,48 @@ class Screener(object):
             return table
         except KeyError:
             raise InvalidTableType(input_table)
+    
+    @staticmethod
+    def get_optimal_table_type(filters: List[str]) -> str:
+        """
+        根据筛选器类型自动选择最优表格类型
+        
+        Args:
+            filters: 筛选器列表
+            
+        Returns:
+            str: 最优表格类型名称
+        """
+        if not filters:
+            return "Descriptive"
+        
+        # 筛选器前缀与表格类型的对应关系
+        filter_type_mapping = {
+            'ta_': 'Technical',      # 技术指标
+            'fa_': 'Fundamental',    # 财务指标
+            'etf_': 'ETF',          # ETF筛选器
+            'n_': 'News',           # 新闻筛选器
+        }
+        
+        # 基础筛选器前缀
+        descriptive_prefixes = [
+            'exch_', 'idx_', 'sec_', 'ind_', 'geo_', 'cap_', 
+            'sh_', 'an_', 'earningsdate', 'ipodate'
+        ]
+        
+        # 检查筛选器类型
+        for filter_id in filters:
+            for prefix, table_type in filter_type_mapping.items():
+                if filter_id.startswith(prefix):
+                    return table_type
+            
+            # 检查是否是基础筛选器
+            for prefix in descriptive_prefixes:
+                if filter_id.startswith(prefix):
+                    return "Descriptive"
+        
+        # 默认返回描述性表格
+        return "Descriptive"
 
     @staticmethod
     def load_filter_dict(reload: bool = True) -> Dict:
@@ -387,8 +436,9 @@ def get_screener_data(filters: Optional[List[str]] = None,
                      rows: Optional[int] = None,
                      order: str = "",
                      signal: str = "",
-                     table: str = "Overview",
-                     custom: Optional[List[str]] = None) -> Dict:
+                     table: Optional[str] = None,
+                     custom: Optional[List[str]] = None,
+                     auto_table: bool = True) -> Dict:
     """
     获取筛选器数据
     
@@ -397,13 +447,20 @@ def get_screener_data(filters: Optional[List[str]] = None,
         rows: 返回行数限制
         order: 排序方式，如 '-price' 表示按价格降序
         signal: 信号筛选，如 'n_majornews'
-        table: 表格类型，可选值: Overview, Valuation, Ownership, Performance, Custom, Financial, Technical
+        table: 表格类型，可选值: Descriptive, Fundamental, Technical, News, ETF
         custom: 自定义列，如 ['1', '21', '23']
+        auto_table: 是否自动选择表格类型，默认True
         
     Returns:
         Dict: 包含表头和数据行的字典
     """
     try:
+        # 自动选择表格类型
+        if auto_table and table is None and filters:
+            table = Screener.get_optimal_table_type(filters)
+        elif table is None:
+            table = "Descriptive"  # 默认表格类型
+            
         screener = Screener(
             filters=filters,
             rows=rows,

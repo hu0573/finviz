@@ -105,6 +105,12 @@ class FinVizFilterUpdater:
             if not select_id:
                 continue
             
+            # 获取筛选器的data-filter属性（这是关键的筛选器ID前缀）
+            filter_name = select.get('data-filter', '')
+            if not filter_name:
+                print(f"警告: 筛选器 {select_id} 缺少 data-filter 属性，跳过")
+                continue
+            
             # 获取筛选器显示名称
             filter_label = self._get_filter_label(select, soup)
             if not filter_label:
@@ -122,7 +128,13 @@ class FinVizFilterUpdater:
                 option_text = self._clean_html_entities(option_text)
                 
                 if option_text:  # 只要有文本就添加，空值也保留
-                    options[option_text] = option_value
+                    # 构建完整的筛选器ID：filter_name + "_" + option_value
+                    if option_value:
+                        full_filter_id = f"{filter_name}_{option_value}"
+                    else:
+                        full_filter_id = ""  # 空值保持为空
+                    
+                    options[option_text] = full_filter_id
             
             if options:
                 # 使用筛选器显示名称作为键，与现有格式保持一致

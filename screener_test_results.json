@@ -1,0 +1,230 @@
+{
+  "获取筛选器选项": {
+    "success": true,
+    "details": "获取到 85 个筛选器类别"
+  },
+  "基本筛选（无条件）": {
+    "success": true,
+    "details": "获取到 5 只股票"
+  },
+  "限制返回行数": {
+    "success": true,
+    "details": "返回 3 行数据"
+  },
+  "交易所筛选 - 纳斯达克": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "交易所筛选 - 纽约证券交易所": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "交易所筛选 - 美国证券交易所": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "指数筛选 - S&P 500": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "指数筛选 - NASDAQ 100": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "指数筛选 - 道琼斯工业平均指数": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "指数筛选 - 罗素2000指数": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "行业筛选 - 科技": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "行业筛选 - 金融": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "行业筛选 - 医疗保健": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "行业筛选 - 能源": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "行业筛选 - 消费周期性": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "市值筛选 - 超大型股": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "市值筛选 - 大型股": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "市值筛选 - 中型股": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "市值筛选 - 小型股": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "市值筛选 - 微型股": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "价格筛选 - 价格高于50美元": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "价格筛选 - 价格低于20美元": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "价格筛选 - 价格10-50美元之间": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "价格筛选 - 价格高于100美元": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "财务筛选 - 低市盈率": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "财务筛选 - 高市盈率": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "财务筛选 - 市净率低于3": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "财务筛选 - 市销率低于5": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "财务筛选 - 高股息收益率": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "财务筛选 - 无股息": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "技术筛选 - RSI超卖": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "技术筛选 - RSI超买": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "技术筛选 - 价格高于50日移动平均线": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "技术筛选 - 价格高于200日移动平均线": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "技术筛选 - 距离52周高点0-10%": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "信号筛选 - 涨幅榜": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "信号筛选 - 跌幅榜": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "信号筛选 - 新高": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "信号筛选 - 新低": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "信号筛选 - 最波动": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "信号筛选 - 最活跃": {
+    "success": true,
+    "details": "找到 5 只股票"
+  },
+  "表格类型 - 概览": {
+    "success": true,
+    "details": "获取到 5 只股票"
+  },
+  "表格类型 - 估值": {
+    "success": true,
+    "details": "获取到 5 只股票"
+  },
+  "表格类型 - 所有权": {
+    "success": true,
+    "details": "获取到 5 只股票"
+  },
+  "表格类型 - 表现": {
+    "success": true,
+    "details": "获取到 5 只股票"
+  },
+  "表格类型 - 财务": {
+    "success": true,
+    "details": "获取到 5 只股票"
+  },
+  "表格类型 - 技术": {
+    "success": true,
+    "details": "获取到 5 只股票"
+  },
+  "排序功能 - 按市值降序": {
+    "success": true,
+    "details": "获取到 5 只股票"
+  },
+  "排序功能 - 按价格升序": {
+    "success": true,
+    "details": "获取到 5 只股票"
+  },
+  "排序功能 - 按涨跌幅降序": {
+    "success": true,
+    "details": "获取到 5 只股票"
+  },
+  "排序功能 - 按股票代码升序": {
+    "success": true,
+    "details": "获取到 5 只股票"
+  },
+  "组合筛选 - 价值投资": {
+    "success": true,
+    "details": "找到 5 只价值股"
+  },
+  "组合筛选 - 成长股": {
+    "success": true,
+    "details": "找到 5 只成长股"
+  },
+  "组合筛选 - 技术面": {
+    "success": true,
+    "details": "找到 5 只技术面强势股票"
+  },
+  "URL筛选功能": {
+    "success": true,
+    "details": "从URL获取到 5 只股票"
+  },
+  "错误处理 - 无效筛选器": {
+    "success": false,
+    "details": "未正确处理无效筛选器"
+  },
+  "错误处理 - 严格筛选条件": {
+    "success": true,
+    "details": "正确处理无结果情况"
+  }
+}

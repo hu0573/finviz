@@ -1,6 +1,4 @@
 import datetime
-import os
-import time
 
 import requests
 from lxml import etree, html
@@ -71,15 +69,6 @@ def get_page_urls(page_content, rows, url):
     return urls
 
 
-def download_chart_image(page_content: requests.Response, **kwargs):
-    """ Downloads a .png image of a chart into the "charts" folder. """
-    file_name = f"{kwargs['URL'].split('t=')[1]}_{int(time.time())}.png"
-
-    if not os.path.exists("charts"):
-        os.mkdir("charts")
-
-    with open(os.path.join("charts", file_name), "wb") as handle:
-        handle.write(page_content.content)
 
 
 def get_analyst_price_targets_for_export(
@@ -142,22 +131,3 @@ def get_analyst_price_targets_for_export(
     return analyst_price_targets
 
 
-def download_ticker_details(page_content: requests.Response, **kwargs):
-    data = {}
-    ticker = kwargs["URL"].split("=")[1]
-    page_parsed = html.fromstring(page_content.text)
-
-    all_rows = [
-        row.xpath("td//text()")
-        for row in page_parsed.cssselect('tr[class="table-dark-row"]')
-    ]
-
-    for row in all_rows:
-        for column in range(0, 11):
-            if column % 2 == 0:
-                data[row[column]] = row[column + 1]
-
-    if len(data) == 0:
-        print(f"-> Unable to parse page for ticker: {ticker}")
-
-    return {ticker: [data, get_analyst_price_targets_for_export(ticker, page_parsed)]}

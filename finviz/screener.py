@@ -13,7 +13,6 @@ from finviz.helper_functions.error_handling import InvalidTableType, NoResults
 from finviz.helper_functions.request_functions import (Connector,
                                                        http_request_get,
                                                        sequential_data_scrape)
-from finviz.helper_functions.save_data import export_to_csv, export_to_db
 
 TABLE_TYPES = {
     "Overview": "111",
@@ -305,95 +304,9 @@ class Screener(object):
 
         return filter_dict
 
-    def to_sqlite(self, filename):
-        """Exports the generated table into a SQLite database.
 
-        :param filename: SQLite database file path
-        :type filename: str
-        """
 
-        export_to_db(self.headers, self.data, filename)
 
-    def to_csv(self, filename: str):
-        """Exports the generated table into a CSV file.
-        Returns a CSV string if filename is None.
-
-        :param filename: CSV file path
-        :type filename: str
-        """
-
-        if filename and filename.endswith(".csv"):
-            filename = filename[:-4]
-
-        if len(self.analysis) > 0:
-            export_to_csv(
-                [
-                    "ticker",
-                    "date",
-                    "category",
-                    "analyst",
-                    "rating",
-                    "price_from",
-                    "price_to",
-                ],
-                self.analysis,
-                f"{filename}-analysts.csv",
-            )
-
-        return export_to_csv(self.headers, self.data, f"{filename}.csv")
-
-    def get_charts(self, period="d", size="l", chart_type="c", ta="1"):
-        """
-        Downloads the charts of all tickers shown by the table.
-
-        :param period: table period eg. : 'd', 'w' or 'm' for daily, weekly and monthly periods
-        :type period: str
-        :param size: table size eg.: 'l' for large or 's' for small - choose large for better quality but higher size
-        :type size: str
-        :param chart_type: chart type: 'c' for candles or 'l' for lines
-        :type chart_type: str
-        :param ta: technical analysis eg.: '1' to show ta '0' to hide ta
-        :type ta: str
-        """
-
-        encoded_payload = urlencode(
-            {"ty": chart_type, "ta": ta, "p": period, "s": size}
-        )
-
-        sequential_data_scrape(
-            scrape.download_chart_image,
-            [
-                f"https://finviz.com/chart.ashx?{encoded_payload}&t={row.get('Ticker')}"
-                for row in self.data
-            ],
-            self._user_agent,
-        )
-
-    def get_ticker_details(self):
-        """
-        Downloads the details of all tickers shown by the table.
-        """
-
-        ticker_data = sequential_data_scrape(
-            scrape.download_ticker_details,
-            [
-                f"https://finviz.com/quote.ashx?&t={row.get('Ticker')}"
-                for row in self.data
-            ],
-            self._user_agent,
-        )
-
-        for entry in ticker_data:
-            for key, value in entry.items():
-                for ticker_generic in self.data:
-                    if ticker_generic.get("Ticker") == key:
-                        if "Sales" not in self.headers:
-                            self.headers.extend(list(value[0].keys()))
-
-                        ticker_generic.update(value[0])
-                        self.analysis.extend(value[1])
-
-        return self.data
 
     def __check_rows(self):
         """

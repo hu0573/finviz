@@ -6,7 +6,7 @@ FinViz股票数据服务
 
 from typing import Dict, List, Optional, Tuple
 from datetime import datetime
-import finviz.main_func as main_func
+from . import main_func
 
 
 class StockDataService:

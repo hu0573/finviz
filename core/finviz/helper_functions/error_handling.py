@@ -1,4 +1,4 @@
-from finviz.config import connection_settings
+from ..config import connection_settings
 
 
 class NoResults(Exception):

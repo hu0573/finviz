@@ -3,8 +3,8 @@ from unittest.mock import patch
 import lxml
 from dateutil.parser import parse
 
-from finviz.main_func import get_all_news, get_analyst_price_targets
-from finviz.screener import Screener
+from ..main_func import get_all_news, get_analyst_price_targets
+from ..screener import Screener
 
 
 class TestScreener:

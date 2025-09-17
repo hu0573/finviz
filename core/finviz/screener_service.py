@@ -5,7 +5,7 @@ FinViz股票筛选服务
 """
 
 from typing import Dict, List, Optional, Union
-from finviz.screener import Screener
+from .screener import Screener
 
 
 class ScreenerService:

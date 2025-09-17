@@ -5,8 +5,8 @@ FinViz服务门面类
 """
 
 from typing import Dict, List, Optional, Tuple, Union
-from .stock_data_service import StockDataService
-from .screener_service import ScreenerService
+from . import stock_data
+from . import screener
 
 
 class FinVizService:
@@ -14,8 +14,7 @@ class FinVizService:
     
     def __init__(self):
         """初始化服务"""
-        self.stock_data_service = StockDataService()
-        self.screener_service = ScreenerService()
+        pass
     
     # ==================== 股票数据获取功能 ====================
     
@@ -29,7 +28,7 @@ class FinVizService:
         Returns:
             Dict: 包含股票详细信息的字典，包括价格、市值、财务数据等
         """
-        return self.stock_data_service.get_stock(ticker)
+        return stock_data.get_stock(ticker)
     
     def get_news(self, ticker: str) -> List[Tuple[str, str, str, str]]:
         """
@@ -41,7 +40,7 @@ class FinVizService:
         Returns:
             List[Tuple]: 新闻列表，每个元素包含 (时间, 标题, 链接, 来源)
         """
-        return self.stock_data_service.get_news(ticker)
+        return stock_data.get_news(ticker)
     
     def get_insider(self, ticker: str) -> List[Dict]:
         """
@@ -53,7 +52,7 @@ class FinVizService:
         Returns:
             List[Dict]: 内部交易记录列表
         """
-        return self.stock_data_service.get_insider(ticker)
+        return stock_data.get_insider(ticker)
     
     def get_analyst_price_targets(self, ticker: str, last_ratings: int = 5) -> List[Dict]:
         """
@@ -66,7 +65,7 @@ class FinVizService:
         Returns:
             List[Dict]: 分析师评级列表
         """
-        return self.stock_data_service.get_analyst_price_targets(ticker, last_ratings)
+        return stock_data.get_analyst_price_targets(ticker, last_ratings)
     
     def get_all_news(self) -> List[Tuple[str, str, str]]:
         """
@@ -75,7 +74,7 @@ class FinVizService:
         Returns:
             List[Tuple]: 所有新闻列表，每个元素包含 (日期, 标题, 链接)
         """
-        return self.stock_data_service.get_all_news()
+        return stock_data.get_all_news()
     
     # ==================== 股票筛选功能 ====================
     
@@ -100,7 +99,7 @@ class FinVizService:
         Returns:
             Dict: 包含表头和数据行的字典
         """
-        return self.screener_service.get_screener_data(filters, rows, order, signal, table, custom)
+        return screener.get_screener_data(filters, rows, order, signal, table, custom)
     
     def get_screener_from_url(self, url: str, rows: Optional[int] = None) -> Dict:
         """
@@ -113,7 +112,7 @@ class FinVizService:
         Returns:
             Dict: 包含表头和数据行的字典
         """
-        return self.screener_service.get_screener_from_url(url, rows)
+        return screener.get_screener_from_url(url, rows)
     
     def get_filter_options(self) -> Dict:
         """
@@ -122,69 +121,7 @@ class FinVizService:
         Returns:
             Dict: 筛选器选项字典，按类别组织
         """
-        return self.screener_service.get_filter_options()
-    
-    # ==================== 便捷筛选方法 ====================
-    
-    def get_sp500_stocks(self, rows: int = 20) -> Dict:
-        """
-        获取S&P 500股票列表
-        
-        Args:
-            rows: 返回行数限制，默认20
-            
-        Returns:
-            Dict: S&P 500股票数据
-        """
-        return self.screener_service.get_sp500_stocks(rows)
-    
-    def get_technology_stocks(self, rows: int = 20) -> Dict:
-        """
-        获取科技股列表
-        
-        Args:
-            rows: 返回行数限制，默认20
-            
-        Returns:
-            Dict: 科技股数据
-        """
-        return self.screener_service.get_technology_stocks(rows)
-    
-    def get_high_volume_stocks(self, rows: int = 20) -> Dict:
-        """
-        获取高成交量股票列表
-        
-        Args:
-            rows: 返回行数限制，默认20
-            
-        Returns:
-            Dict: 高成交量股票数据
-        """
-        return self.screener_service.get_high_volume_stocks(rows)
-    
-    def get_oversold_stocks(self, rows: int = 20) -> Dict:
-        """
-        获取超卖股票列表（RSI < 30）
-        
-        Args:
-            rows: 返回行数限制，默认20
-            
-        Returns:
-            Dict: 超卖股票数据
-        """
-        return self.screener_service.get_oversold_stocks(rows)
-    
-    def get_overbought_stocks(self, rows: int = 20) -> Dict:
-        """
-        获取超买股票列表（RSI > 70）
-        
-        Args:
-            rows: 返回行数限制，默认20
-            
-        Returns:
-            Dict: 超买股票数据
-        """
-        return self.screener_service.get_overbought_stocks(rows)
+        return screener.get_filter_options()
     
     # ==================== 组合功能方法 ====================
     

@@ -108,7 +108,7 @@ class StockService:
         Returns:
             Dict: S&P 500股票数据
         """
-        return self.finviz_service.get_sp500_stocks(rows)
+        return self.finviz_service.get_screener_data(filters=['idx_sp500'], rows=rows)
     
     def get_finviz_tech_stocks(self, rows: int = 20) -> Dict:
         """
@@ -120,7 +120,7 @@ class StockService:
         Returns:
             Dict: 科技股数据
         """
-        return self.finviz_service.get_technology_stocks(rows)
+        return self.finviz_service.get_screener_data(filters=['sec_technology'], rows=rows)
     
     def get_finviz_filter_options(self) -> Dict:
         """

@@ -466,3 +466,66 @@ def get_filter_options() -> Dict:
         return {"error": f"获取筛选器选项失败: {str(e)}"}
 
 
+def get_sp500_stocks(rows: int = 20) -> Dict:
+    """
+    获取S&P 500股票列表
+    
+    Args:
+        rows: 返回行数限制，默认20
+        
+    Returns:
+        Dict: S&P 500股票数据
+    """
+    return get_screener_data(filters=['idx_sp500'], rows=rows)
+
+
+def get_technology_stocks(rows: int = 20) -> Dict:
+    """
+    获取科技股列表
+    
+    Args:
+        rows: 返回行数限制，默认20
+        
+    Returns:
+        Dict: 科技股数据
+    """
+    return get_screener_data(filters=['sec_technology'], rows=rows)
+
+
+def get_high_volume_stocks(rows: int = 20) -> Dict:
+    """
+    获取高成交量股票列表
+    
+    Args:
+        rows: 返回行数限制，默认20
+        
+    Returns:
+        Dict: 高成交量股票数据
+    """
+    return get_screener_data(filters=['sh_avgvol_o500'], rows=rows, order='-volume')
+
+
+def get_oversold_stocks(rows: int = 20) -> Dict:
+    """
+    获取超卖股票列表（RSI < 30）
+    
+    Args:
+        rows: 返回行数限制，默认20
+        
+    Returns:
+        Dict: 超卖股票数据
+    """
+    return get_screener_data(filters=['ta_rsi_os30'], rows=rows)
+
+
+def get_overbought_stocks(rows: int = 20) -> Dict:
+    """
+    获取超买股票列表（RSI > 70）
+    
+    Args:
+        rows: 返回行数限制，默认20
+        
+    Returns:
+        Dict: 超买股票数据
+    """
+    return get_screener_data(filters=['ta_rsi_ob70'], rows=rows)

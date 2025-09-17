@@ -54,7 +54,7 @@ def test_finviz_service():
     # 测试筛选器功能
     print("3. 测试筛选器功能:")
     try:
-        screener_data = service.get_sp500_stocks(5)
+        screener_data = service.get_screener_data(filters=['idx_sp500'], rows=5)
         if 'error' not in screener_data:
             print(f"   ✅ 成功获取S&P 500股票数据")
             print(f"   表头: {screener_data['headers']}")

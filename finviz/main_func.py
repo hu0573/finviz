@@ -32,31 +32,56 @@ def get_stock(ticker):
     get_page(ticker)
     page_parsed = STOCK_PAGE[ticker]
 
-    title = page_parsed.cssselect('table[class="fullview-title"]')[0]
-    keys = ["Ticker","Company", "Sector", "Industry", "Country"]
-    fields = [f.text_content() for f in title.cssselect('a[class="tab-link"]')]
-    data = dict(zip(keys, fields))
+    # 获取基本信息 - 使用新的页面结构
+    data = {}
+    
+    # 获取股票代码
+    ticker_element = page_parsed.cssselect('.quote-header_ticker-wrapper_ticker')
+    if ticker_element:
+        data["Ticker"] = ticker_element[0].text.strip()
+    
+    # 获取公司名称
+    company_element = page_parsed.cssselect('.quote-header_ticker-wrapper_company a')
+    if company_element:
+        data["Company"] = company_element[0].text.strip()
+        company_link = company_element[0].get("href")
+        data["Website"] = company_link if company_link and company_link.startswith("http") else None
+    
+    # 获取行业信息 - 从标签链接中提取
+    tab_links = page_parsed.cssselect('.tab-link')
+    for link in tab_links:
+        href = link.get("href", "")
+        if "sec_" in href:
+            data["Sector"] = link.text.strip()
+        elif "ind_" in href:
+            data["Industry"] = link.text.strip()
+        elif "geo_" in href:
+            data["Country"] = link.text.strip()
 
-    company_link = title.cssselect('a[class="tab-link"]')[0].attrib["href"]
-    data["Website"] = company_link if company_link.startswith("http") else None
-
+    # 获取股票数据表格
     all_rows = [
         row.xpath("td//text()")
         for row in page_parsed.cssselect('tr[class="table-dark-row"]')
     ]
 
     for row in all_rows:
-        for column in range(0, 11, 2):
-            if row[column] == "EPS next Y" and "EPS next Y" in data.keys():
-                data["EPS growth next Y"] = row[column + 1]
-                continue
-            elif row[column] == "Volatility":
-                vols = row[column + 1].split()
-                data["Volatility (Week)"] = vols[0]
-                data["Volatility (Month)"] = vols[1]
-                continue
-
-            data[row[column]] = row[column + 1]
+        for column in range(0, len(row) - 1, 2):
+            if column + 1 < len(row):
+                key = row[column].strip()
+                value = row[column + 1].strip()
+                
+                # 处理特殊情况
+                if key == "EPS next Y" and "EPS next Y" in data.keys():
+                    data["EPS growth next Y"] = value
+                    continue
+                elif key == "Volatility":
+                    vols = value.split()
+                    if len(vols) >= 2:
+                        data["Volatility (Week)"] = vols[0]
+                        data["Volatility (Month)"] = vols[1]
+                    continue
+                
+                data[key] = value
 
     return data
 
@@ -105,22 +130,62 @@ def get_news(ticker):
     rows = news_table[0].xpath("./tr[not(@id)]")
 
     results = []
-    date = None
+    current_date = None
+    
     for row in rows:
-        raw_timestamp = row.xpath("./td")[0].xpath("text()")[0][0:-2]
-
-        if len(raw_timestamp) > 8:
-            parsed_timestamp = datetime.strptime(raw_timestamp, "%b-%d-%y %I:%M%p")
-            date = parsed_timestamp.date()
-        else:
-            parsed_timestamp = datetime.strptime(raw_timestamp, "%I:%M%p").replace(
-                year=date.year, month=date.month, day=date.day)
+        tds = row.xpath("./td")
+        if len(tds) < 2:
+            continue
+            
+        # 获取时间文本并清理
+        time_text = tds[0].xpath("text()")[0] if tds[0].xpath("text()") else ""
+        raw_timestamp = time_text.strip()
+        
+        # 解析时间格式
+        try:
+            if "Today" in raw_timestamp:
+                # 处理 "Today 06:00AM" 格式
+                time_part = raw_timestamp.replace("Today", "").strip()
+                parsed_timestamp = datetime.strptime(time_part, "%I:%M%p").replace(
+                    year=datetime.now().year,
+                    month=datetime.now().month,
+                    day=datetime.now().day
+                )
+                current_date = parsed_timestamp.date()
+            elif len(raw_timestamp) > 8 and "-" in raw_timestamp:
+                # 处理 "Dec-15-24 06:00AM" 格式
+                parsed_timestamp = datetime.strptime(raw_timestamp, "%b-%d-%y %I:%M%p")
+                current_date = parsed_timestamp.date()
+            else:
+                # 处理 "06:00AM" 格式（使用当前日期）
+                if current_date is None:
+                    current_date = datetime.now().date()
+                parsed_timestamp = datetime.strptime(raw_timestamp, "%I:%M%p").replace(
+                    year=current_date.year,
+                    month=current_date.month,
+                    day=current_date.day
+                )
+        except ValueError:
+            # 如果时间解析失败，跳过这条新闻
+            continue
+        
+        # 获取新闻信息
+        news_link = tds[1].cssselect('a[class="tab-link-news"]')
+        if not news_link:
+            continue
+            
+        title = news_link[0].xpath("text()")[0] if news_link[0].xpath("text()") else ""
+        url = news_link[0].get("href", "")
+        
+        # 获取来源信息
+        source_span = tds[1].cssselect('div[class="news-link-right"] span')
+        source = source_span[0].xpath("text()")[0][1:] if source_span and source_span[0].xpath("text()") else ""
 
         results.append((
             parsed_timestamp.strftime("%Y-%m-%d %H:%M"),
-            row.xpath("./td")[1].cssselect('a[class="tab-link-news"]')[0].xpath("text()")[0],
-            row.xpath("./td")[1].cssselect('a[class="tab-link-news"]')[0].get("href"),
-            row.xpath("./td")[1].cssselect('div[class="news-link-right"] span')[0].xpath("text()")[0][1:]
+            title,
+            url,
+            source
         ))
 
     return results

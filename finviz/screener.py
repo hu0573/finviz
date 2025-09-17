@@ -273,7 +273,12 @@ class Screener(object):
 
             # Odd td elements contain the filter tag and options
             selections = td_list[i + 1].find("select")
-            filter_name = selections.get("data-filter").strip()
+            if selections is None:
+                continue
+            filter_name = selections.get("data-filter")
+            if filter_name is None:
+                continue
+            filter_name = filter_name.strip()
 
             # Store filter options for current filter
             options = selections.find_all("option", {"value": True})
@@ -327,7 +332,12 @@ class Screener(object):
         """ Private function used to return table headers. """
         headers = []
 
-        header_elements = self._page_content.cssselect('tr[valign="middle"]')[0].xpath("td")
+        # 尝试新的表头结构 (thead tr th)
+        header_elements = self._page_content.cssselect('thead tr th')
+        
+        if not header_elements:
+            # 尝试旧的结构 (tr[valign="middle"] td)
+            header_elements = self._page_content.cssselect('tr[valign="middle"] td')
         
         for header_element in header_elements:
             # Use normalize-space to extract text content while ignoring internal elements

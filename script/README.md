@@ -1,155 +1,244 @@
-# FinViz 筛选器更新脚本
+# FinViz Scripts
 
-这个脚本用于从 FinViz 网站自动下载和更新筛选器选项，确保 `filters.json` 文件包含最新的筛选器数据。
+本目录包含两个核心脚本，用于 FinViz 筛选器的测试和更新。
 
-## 功能特性
+## 脚本说明
 
-- 🔄 **自动下载**: 从 FinViz 筛选器页面下载最新源码
-- 🔍 **智能解析**: 自动提取所有筛选器选项和值
-- 📊 **差异报告**: 显示新增、删除和修改的筛选器
-- 💾 **自动备份**: 更新前自动备份现有文件
-- 🛡️ **错误处理**: 完善的错误处理和网络连接检查
+### 1. `auto_filter_test.py` - 筛选器测试脚本
 
-## 安装依赖
+**功能**: 自动测试所有 FinViz 筛选器功能
 
+**特点**:
+- ✅ 全自动运行，无需用户交互
+- ✅ 随机测试每个筛选器的一个选项
+- ✅ 智能过滤空值和"Any"选项
+- ✅ 自动保存测试结果到JSON文件
+- ✅ 实时显示测试进度和结果
+
+**使用方法**:
 ```bash
-# 安装脚本依赖项
-pip install -r script/requirements.txt
-
-# 或者单独安装
-pip install requests beautifulsoup4 lxml
+cd script
+python auto_filter_test.py
 ```
 
-## 使用方法
+**测试参数**:
+- 默认测试前10个筛选器
+- 每次测试间隔1秒
+- 结果自动保存到 `auto_test_results.json`
 
-### 基本使用
-
-```bash
-# 在项目根目录运行
-python script/update_filters.py
+**测试结果示例**:
 ```
+FinViz 筛选器自动测试
+========================================
+加载了 85 个筛选器
+将测试前 10 个筛选器，间隔 1.0 秒
 
-### 脚本功能
+进度: 1/10
+测试: Exchange
+  选择: Custom (Elite only) -> modal
+  代码: exch_modal
+  结果: 5 只股票
 
-1. **网络检查**: 首先检查与 FinViz 的连接
-2. **下载源码**: 从 `https://finviz.com/screener.ashx?v=111&ft=4` 下载页面
-3. **解析筛选器**: 提取所有筛选器选项和对应的值
-4. **比较差异**: 与现有 `filters.json` 比较并显示变化
-5. **备份文件**: 自动备份现有文件为 `.backup` 格式
-6. **更新文件**: 保存新的筛选器数据到 `core/finviz/filters.json`
-
-## 输出示例
-
-```
-FinViz 筛选器更新工具
-==================================================
-检查网络连接...
-网络连接正常
-正在下载页面源码: https://finviz.com/screener.ashx?v=111&ft=4
-成功下载页面源码，大小: 258560 字符
-正在解析HTML并提取筛选器...
-提取筛选器: Market Cap. (25 个选项)
-提取筛选器: Price/Earnings (25 个选项)
-提取筛选器: Forward Price/Earnings (25 个选项)
 ...
-总共提取了 45 个筛选器
 
-=== 筛选器更新报告 ===
-旧筛选器数量: 42
-新筛选器数量: 45
-变化: +3
-
-新增筛选器 (3 个):
-  + New Filter 1
-  + New Filter 2
-  + New Filter 3
-
-修改筛选器 (2 个):
-  ~ Market Cap. (选项数: 20 -> 25)
-  ~ Price/Earnings (选项数: 22 -> 25)
-
-备份现有文件到: core/finviz/filters.json.backup
-正在保存筛选器数据到: core/finviz/filters.json
-成功保存 45 个筛选器到文件
-
-筛选器更新完成！
+========================================
+测试完成: 10/10 成功
+成功率: 100.0%
 ```
 
-## 文件结构
+### 2. `update_filters.py` - 筛选器更新脚本
 
+**功能**: 从 FinViz 网站更新筛选器配置
+
+**特点**:
+- ✅ 自动下载最新的筛选器配置
+- ✅ 智能比较新旧配置差异
+- ✅ 自动备份现有配置
+- ✅ 支持增量更新和完整更新
+
+**使用方法**:
+```bash
+cd script
+python update_filters.py
 ```
-script/
-├── update_filters.py    # 主脚本文件
-├── requirements.txt     # 依赖项列表
-└── README.md           # 使用说明
+
+**更新选项**:
+- 只下载页面源码（不更新文件）
+- 提取筛选器数据（不保存）
+- 比较现有筛选器
+- 执行完整更新流程（带备份）
+
+## 筛选器类型
+
+脚本会处理以下类型的筛选器：
+
+### 基础筛选器
+- **Exchange**: 交易所（NASDAQ, NYSE, AMEX等）
+- **Index**: 指数（S&P 500, NASDAQ 100等）
+- **Sector**: 行业板块（Technology, Healthcare等）
+- **Industry**: 具体行业（Software, Pharmaceuticals等）
+- **Country**: 国家（USA, China, Japan等）
+- **Market Cap.**: 市值（Large, Mid, Small等）
+
+### 财务指标筛选器
+- **P/E**: 市盈率
+- **Forward P/E**: 前瞻市盈率
+- **PEG**: PEG比率
+- **P/S**: 市销率
+- **P/B**: 市净率
+- **Price/Cash**: 价格/现金流
+- **Price/Free Cash Flow**: 价格/自由现金流
+- **EV/EBITDA**: 企业价值倍数
+- **EV/Sales**: 企业价值/销售额
+
+### 增长指标筛选器
+- **EPS Growth**: 每股收益增长率
+- **Sales Growth**: 销售额增长率
+- **Dividend Growth**: 股息增长率
+
+### 盈利能力筛选器
+- **Return on Assets**: 资产回报率
+- **Return on Equity**: 股本回报率
+- **Return on Invested Capital**: 投资资本回报率
+- **Gross Margin**: 毛利率
+- **Operating Margin**: 营业利润率
+- **Net Profit Margin**: 净利润率
+
+### 财务健康筛选器
+- **Current Ratio**: 流动比率
+- **Quick Ratio**: 速动比率
+- **LT Debt/Equity**: 长期债务/股本
+- **Debt/Equity**: 债务/股本
+
+### 所有权筛选器
+- **InsiderOwnership**: 内部人持股
+- **InsiderTransactions**: 内部人交易
+- **InstitutionalOwnership**: 机构持股
+- **InstitutionalTransactions**: 机构交易
+- **Short Float**: 空头比例
+
+### 技术分析筛选器
+- **Performance**: 表现指标
+- **Volatility**: 波动率
+- **RSI (14)**: 相对强弱指数
+- **Gap**: 跳空
+- **Moving Averages**: 移动平均线
+- **High/Low**: 高低点
+- **Pattern**: 技术形态
+- **Candlestick**: K线形态
+- **Beta**: 贝塔系数
+
+### 交易筛选器
+- **Average Volume**: 平均成交量
+- **Relative Volume**: 相对成交量
+- **Current Volume**: 当前成交量
+- **Trades**: 交易次数
+- **Price $**: 价格范围
+
+### ETF筛选器
+- **Single Category**: 单一类别
+- **Asset Type**: 资产类型
+- **Sponsor**: 发起人
+- **Net Expense Ratio**: 净费用率
+- **Net Fund Flows**: 净资金流
+- **Annualized Return**: 年化回报
+
+## 自定义配置
+
+### 测试脚本配置
+
+编辑 `auto_filter_test.py` 文件中的参数：
+
+```python
+max_test = 10  # 测试筛选器数量
+delay = 1.0    # 延迟时间（秒）
 ```
 
-## 技术实现
+### 更新脚本配置
 
-### 核心类: FinVizFilterUpdater
+编辑 `update_filters.py` 文件中的参数：
 
-- `download_page_source()`: 下载网页源码
-- `extract_filters_from_html()`: 从HTML提取筛选器
-- `load_existing_filters()`: 加载现有筛选器文件
-- `save_filters()`: 保存筛选器到JSON文件
-- `compare_filters()`: 比较新旧筛选器差异
-- `update_filters()`: 执行完整更新流程
-
-### 筛选器提取逻辑
-
-1. 使用 BeautifulSoup 解析HTML
-2. 查找所有 `<select>` 元素
-3. 提取每个select的name属性和选项
-4. 智能匹配筛选器标签名称
-5. 转换为符合现有格式的JSON结构
-
-### 错误处理
-
-- 网络连接检查
-- 请求超时处理
-- JSON解析错误处理
-- 文件IO错误处理
-
-## 注意事项
-
-1. **网络要求**: 需要能够访问 `finviz.com`
-2. **权限要求**: 需要对 `core/finviz/` 目录有写权限
-3. **备份机制**: 更新前会自动备份现有文件
-4. **数据格式**: 输出的JSON格式与现有 `filters.json` 完全兼容
+```python
+# 更新选项
+backup = True  # 是否备份现有配置
+reload = True  # 是否重新加载配置
+```
 
 ## 故障排除
 
 ### 常见问题
 
-1. **网络连接失败**
+1. **导入错误**
    ```
-   错误: 无法连接到 FinViz 网站，请检查网络连接
+   ModuleNotFoundError: No module named 'core'
    ```
-   - 检查网络连接
-   - 确认能够访问 finviz.com
+   **解决方案**: 确保在 `script` 目录下运行脚本
 
-2. **权限错误**
+2. **网络超时**
    ```
-   保存筛选器文件失败: [Errno 13] Permission denied
+   Connection timeout
    ```
-   - 检查对 `core/finviz/` 目录的写权限
-   - 确保文件没有被其他程序占用
+   **解决方案**: 增加延迟时间或检查网络连接
 
-3. **解析失败**
+3. **筛选器代码错误**
    ```
-   警告: 未提取到任何筛选器数据
+   无法生成筛选器代码
    ```
-   - FinViz 网站结构可能发生变化
-   - 检查网页源码是否正常下载
+   **解决方案**: 运行更新脚本获取最新配置
 
-## 开发说明
+4. **权限错误**
+   ```
+   Permission denied
+   ```
+   **解决方案**: 确保有写入权限
 
-如需修改脚本功能，主要关注以下方法：
+### 调试建议
 
-- `_get_filter_label()`: 筛选器标签提取逻辑
-- `extract_filters_from_html()`: HTML解析逻辑
-- `compare_filters()`: 差异比较逻辑
+1. **测试筛选器**: 使用 `auto_filter_test.py` 验证功能
+2. **更新配置**: 使用 `update_filters.py` 获取最新筛选器
+3. **检查网络**: 确保能访问 FinViz 网站
+4. **查看日志**: 检查控制台输出的错误信息
 
-## 版本历史
+## 文件结构
 
-- **v1.0.0**: 初始版本，支持基本的筛选器更新功能
+```
+script/
+├── auto_filter_test.py    # 筛选器测试脚本
+├── update_filters.py      # 筛选器更新脚本
+├── update_filters.sh      # 更新脚本的Shell版本
+├── requirements.txt       # Python依赖
+└── README.md             # 本说明文档
+```
+
+## 依赖要求
+
+确保安装以下Python包：
+
+```bash
+pip install -r requirements.txt
+```
+
+主要依赖：
+- `requests` - HTTP请求
+- `beautifulsoup4` - HTML解析
+- `user_agent` - 用户代理生成
+- `tqdm` - 进度条显示
+
+## 使用流程
+
+### 日常使用
+1. 运行测试脚本验证筛选器功能
+2. 如有问题，运行更新脚本获取最新配置
+3. 再次运行测试脚本确认修复
+
+### 开发调试
+1. 修改筛选器配置后运行测试脚本
+2. 查看测试结果和错误信息
+3. 根据结果调整配置或代码
+
+## 注意事项
+
+- 脚本会向 FinViz 网站发送请求，请确保网络连接正常
+- 内置延迟机制避免请求过于频繁
+- 测试结果会自动保存，便于后续分析
+- 更新脚本会自动备份现有配置，确保数据安全
